@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the example - vue geolocator</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+
+        <p>
+          Let us locate you for better results...
+          <button @click="locateMe">Get location</button>
+        </p>
+        
+        <div v-if="errorStr">
+          Sorry, but the following error
+          occurred: {{errorStr}}
+        </div>
+        
+        <div v-if="gettingLocation">
+          <i>Getting your location...</i>
+        </div>
+        
+        <div v-if="location">
+          Your location data is {{ location.coords.latitude }}, {{ location.coords.longitude}}
+        </div>
+        
+      </div>
+</body>
+</html>
